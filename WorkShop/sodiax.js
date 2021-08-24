@@ -1,6 +1,6 @@
 
 let month = 12;
-let year = prompt("Please enter year of your birth :");
+let year = prompt("Please enter year of your birth :"); //รับข้อมูลหน้า browser
 let mod = year % month;
 let newLine = "\r\n";
 
@@ -49,7 +49,7 @@ function Zodiax1(year) {
     return zodi
 }
 
-//Ref By Chayakorn
+//Ref By Chayakorn ทดสอบทำเเบบเพื่อน
 function Zodiac2(year) {
     let Zodiac = ['monkey', 'rooster', 'dog', 'pig', 'rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horses', 'sheep'];
     return Zodiac[mod];

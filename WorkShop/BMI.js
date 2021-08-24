@@ -1,22 +1,30 @@
 
 //input ค่าเอง
-let pound = prompt('Your pound is : ');
-let inch = prompt('Your inch is : ');
+let pound = [36.5, 35.5, 34.5];
+let inch = [39, 38, 37];
+
 const convertKg = 0.453592;
 const convertM = 0.0254;
 
+let newLine = "\r\n";
 
 function bmi(pound, inch) {
     let kilogram;
     let meter;
-    let bmi;
+    let bmi = [];
 
-    kilogram = pound * convertKg;
-    meter = inch * convertM;
+    for (let i = 0; i < 3; i++) {
+        let pound2 = pound[i];
+        let inch2 = inch[i];
 
-    bmi = kilogram / (meter * meter)
-    return bmi;
+        kilogram = pound2 * convertKg;
+        meter = inch2 * convertM;
+
+        bmi[i] = kilogram / (meter * meter);
+    } return bmi;
+
 }
-
-alert('Your BMI is : ' + bmi(pound, inch));
-console.log('Your BMI is : ' + bmi(pound, inch));
+for (let j = 0; j < 3; j++) {
+    console.log('Pound : ' + pound[j] + ' | Inch : ' + inch[j]);
+    console.log('Your BMI is : ' + bmi(pound, inch)[j]);
+}
