@@ -6,6 +6,8 @@ let inch = [39, 38, 37, 36];
 const convertKg = 0.453592;
 const convertM = 0.0254;
 
+let newLine = "\r\n";
+
 function bmi(pound, inch) {
     let kilogram;
     let meter;
@@ -23,7 +25,19 @@ function bmi(pound, inch) {
 
 }
 
+//ดูข้อมูลทั้งหมด
 for (let j = 0; j < pound.length; j++) {
-    console.log('Pound : ' + pound[j] + ' | Inch : ' + inch[j]);
-    console.log('Your BMI is : ' + bmi(pound, inch)[j]);
+    console.log('คนที่ : ' + [j + 1] + ' | Pound : ' + pound[j] + ' | Inch : ' + inch[j]);
+    console.log('BMI is : ' + bmi(pound, inch)[j]);
+    console.log(newLine);
 }
+
+//ดูข้อมูลบางข้อมูล
+let k = 1; //ตำแหน่งคนที่เราต้องการหาข้อมูล
+if (k <= pound.length) {
+    console.log('คนที่ : ' + [k] + ' | Pound : ' + pound[k - 1] + ' | Inch : ' + inch[k - 1] + ' -> [ Search ]');
+    console.log('BMI is : ' + bmi(pound, inch)[k - 1]);
+} else {
+    console.log('Error : มีข้อมูลอยู่ ' + pound.length + ' คน');
+}
+
