@@ -1,7 +1,8 @@
 
 let month = 12;
-let year = prompt();
+let year = prompt("Please enter year of your birth :");
 let mod = year % month;
+let newLine = "\r\n";
 
 function Zodiax1(year) {
     let zodi;
@@ -10,41 +11,42 @@ function Zodiax1(year) {
             zodi = 'monkey';
             break;
         case 1:
-            zodi = 'rooster'
+            zodi = 'rooster';
             break;
         case 2:
-            zodi = 'dog'
+            zodi = 'dog';
             break;
         case 3:
-            zodi = 'pig'
+            zodi = 'pig';
             break;
         case 4:
-            zodi = 'rat'
+            zodi = 'rat';
             break;
         case 5:
-            zodi = 'ox'
+            zodi = 'ox';
             break;
         case 6:
-            zodi = 'tiger'
+            zodi = 'tiger';
             break;
         case 7:
-            zodi = 'rabbit'
+            zodi = 'rabbit';
             break;
         case 8:
-            zodi = 'dragon'
+            zodi = 'dragon';
             break;
         case 9:
             zodi = 'snake';
             break;
         case 10:
-            zodi = 'horse'
+            zodi = 'horse';
             break;
         case 11:
-            zodi = 'sheep'
+            zodi = 'sheep';
             break;
         default:
-            zodi = 'errer'
-    }return zodi
+            zodi = 'errer';
+    }
+    return zodi
 }
 
 //Ref By Chayakorn
@@ -53,6 +55,7 @@ function Zodiac2(year) {
     return Zodiac[mod];
 }
 
+alert('Zodiax1 use switch : ' + Zodiax1(year) + newLine +'Zodiax2 use array : ' + Zodiac2(year));
 
-console.log('Zodiax1 : ' + Zodiax1(year));
-console.log('Zodiax2 : ' + Zodiac2(year));
+console.log('Zodiax1 use switch : ' + Zodiax1(year));
+console.log('Zodiax2 use array : ' + Zodiac2(year));
