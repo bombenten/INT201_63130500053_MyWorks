@@ -3,9 +3,11 @@
 let pound = [36.5, 35.5, 34.5, 33.5];
 let inch = [39, 38, 37, 36];
 
+//ค่าคงที่สำหรับไปแปลงเป็น Kg , M
 const convertKg = 0.453592;
 const convertM = 0.0254;
 
+//เก็บค่าเว้นบรรทัด
 let newLine = "\r\n";
 
 function bmi(pound, inch) {
