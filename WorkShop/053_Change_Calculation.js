@@ -27,6 +27,9 @@ function ChangeCalculation(price, money) {
     };
 
     moneyChange = money - price; //เงินทอน = เงินที่จ่าย - ราคาสินค้า
+    if (money < price) {
+        return "Error, you don't have enough money."; //ดักไว้เผื่อเงินที่จ่ายน้อยกว่าราคาสินค้า
+    }
     if (moneyChange >= banknote['bank500']) { //ถ้าเงินทอน มากกว่าเเบงค์ 500
         bankchange['change500'] = Math.floor(moneyChange / banknote['bank500']); //เอาเงินทอนไปหารเเบงค์ 500 เเล้วปัดเศษลง
         moneyChange = moneyChange % banknote['bank500']; //อัปเดทค่าเงินทอนใหม่โดย เงินทอนใหม่ = เงินทอนเดิม mod เเบงค์ 500
@@ -59,12 +62,17 @@ function ChangeCalculation(price, money) {
         bankchange['change1'] = Math.floor(moneyChange / banknote['coin1']);
         moneyChange = moneyChange % banknote['coin1'];
     }
-    if (money < price) {
-        bankchange = "Error, you don't have enough money."; //ดักไว้เผื่อเงินที่จ่ายน้อยกว่าราคาสินค้า
-
-    }
+    
     //ฟอร์แมทให้ out put ออกมาสวยงาม
-    return `Banknote 500 : ${bankchange.change500} \nBanknote 100 : ${bankchange.change100} \nBanknote 50 : ${bankchange.change50} \nBanknote 20 : ${bankchange.change20} \nCoin 10 : ${bankchange.change10} \nCoin 5 : ${bankchange.change5} \nCoin 2 : ${bankchange.change2} \nCoin 1 : ${bankchange.change1}`;
+    return `Price : ${price} | Money : ${money}
+    Banknote 500 : ${bankchange.change500}
+    Banknote 100 : ${bankchange.change100}
+    Banknote 50 : ${bankchange.change50}
+    Banknote 20 : ${bankchange.change20}
+    Coin 10 : ${bankchange.change10}
+    Coin 5 : ${bankchange.change5}
+    Coin 2 : ${bankchange.change2}
+    Coin 1 : ${bankchange.change1}`;
 }
 
 //console.log(ChangeCalculation(product price, money you pay));
