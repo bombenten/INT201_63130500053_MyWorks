@@ -1,5 +1,5 @@
-let price; //ราคาสินค้า
-let money; //เงินที่จ่าย
+// let price; //ราคาสินค้า
+// let money; //เงินที่จ่าย
 
 function ChangeCalculation(price, money) {
     //สร้าง Obj เเบงค์ต่างๆ
@@ -62,17 +62,21 @@ function ChangeCalculation(price, money) {
         bankchange['change1'] = Math.floor(moneyChange / banknote['coin1']);
         moneyChange = moneyChange % banknote['coin1'];
     }
+
+    return bankchange;
+
+    //ฟอร์แมทให้ out put ออกมาสวยงาม ** เเต่ถ้าใช้ back thick จะ return ออกมาเป็น String **
+    // return `Price : ${price} | Money : ${money}
+    // Banknote 500 : ${bankchange.change500}
+    // Banknote 100 : ${bankchange.change100}
+    // Banknote 50 : ${bankchange.change50}
+    // Banknote 20 : ${bankchange.change20}
+    // Coin 10 : ${bankchange.change10}
+    // Coin 5 : ${bankchange.change5}
+    // Coin 2 : ${bankchange.change2}
+    // Coin 1 : ${bankchange.change1}`;
+
     
-    //ฟอร์แมทให้ out put ออกมาสวยงาม
-    return `Price : ${price} | Money : ${money}
-    Banknote 500 : ${bankchange.change500}
-    Banknote 100 : ${bankchange.change100}
-    Banknote 50 : ${bankchange.change50}
-    Banknote 20 : ${bankchange.change20}
-    Coin 10 : ${bankchange.change10}
-    Coin 5 : ${bankchange.change5}
-    Coin 2 : ${bankchange.change2}
-    Coin 1 : ${bankchange.change1}`;
 }
 
 //console.log(ChangeCalculation(product price, money you pay));
